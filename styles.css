@@ -1,0 +1,159 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+      background-color: #f8f8f8;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #dce1e6, #f5f7fa);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #111, #777);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+
+    .backdrop-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.transition {
+  transition: transform 0.4s ease;
+}
+
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #4c4c4e;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 6rem auto;
+      padding: 0 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #8e8e93;
+    }
+
+
+    .slider {
+  background: white;
+  padding: 2rem 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: calc(250px * 28); /* Ajustado al número de logos * 2 */
+}
+
+.slide {
+  height: 100px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 14));
+  }
+}
+
+#card-track {
+  padding-right: 2rem; /* o 3rem si aún se ve cortada */
+}
+
+#carousel-wrapper {
+  scroll-padding-right: 3rem;
+}
+
+
+/* Estilo exclusivo para las tarjetas de enlaces de interés */
+.enlace-interes-card {
+  width: 100%;
+  max-width: 32%;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.enlace-interes-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.enlace-interes-card img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
